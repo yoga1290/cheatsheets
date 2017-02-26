@@ -14,11 +14,14 @@
 
 ## Shared volumes path (& view them on Ubuntu's Nautilus):
 + `docker inspect <containerId> | grep -E -o '"Source": "(.)*"' | sed 's/"//g' | sed "s/Source: //g" | xargs nautilus`
+-----
 
 
+## Run on [host network](https://docs.docker.com/engine/reference/run/#network-host):
++ `docker run -it --rm --net="host" --name <container> <image>`
 
 
---------------------------
+----
 
 `docker run --name <new container name> -e <ENV Variable> -d mysql:tag`
 + **--name string** | Assign a name to the container
