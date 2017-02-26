@@ -6,6 +6,8 @@
 + `docker ps -a`
 + `docker kill <containerId>`
 + `docker rm <containerId>`
++ `docker rmi <image>`
++ `docker images`
 + `docker start <containerId>`
 + `docker exec -it <containerId> /bin/sh`
 + `docker build -t <image> <Dockerfile dir>`
