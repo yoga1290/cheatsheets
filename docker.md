@@ -14,6 +14,7 @@
 
 ## Shared volumes path (& view them on Ubuntu's Nautilus):
 + `docker inspect <containerId> | grep -E -o '"Source": "(.)*"' | sed 's/"//g' | sed "s/Source: //g" | xargs nautilus`
+
 -----
 
 
