@@ -39,9 +39,13 @@ $query->limit = 20;
 $query->offset = 0;
 $query->query = new \eZ\Publish\API\Repository\Values\Content\Query\Criterion\LogicalAnd($criterionArray);
 $result = $searchService->findContent($query)->searchHits;
+foreach ($result as $record) {
+    $contentTypeId = $record->valueObject->versionInfo->contentInfo->contentTypeId;
+    $remoteId = $record->valueObject->versionInfo->contentInfo->remoteId;
+    //$identifier = $contentTypeService->loadContentType($contentTypeId)->identifier;
+}
 ```
 
 
 ### Ref
 + [search cheatsheet](http://share.ez.no/blogs/thiago-campos-viana/ez-publish-5-tip-search-cheat-sheet)
-+ use `\eZ\Publish\API\Repository\Values\Content\Query\Criterion\FieldRelation` for `RelationValue` fields.
