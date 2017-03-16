@@ -1,5 +1,26 @@
 # eZ platform
 
+# View
+
++ [`{{ ez_render_field( content, 'some_field_identifier' ) }}`](https://doc.ez.no/display/DEVELOPER/Content+Rendering#ContentRendering-UsingtheFieldType'stemplateblock)
++ [`{{ ez_field_value( content, 'some_field_identifier' ) }}`](https://doc.ez.no/display/DEVELOPER/Content+Rendering#ContentRendering-GettingrawFieldvalue)
+
+
+
+# Controller
+
+## [Creating a JSON Response](http://symfony.com/doc/current/components/http_foundation.html#creating-a-json-response)
+
+```php
+use Symfony\Component\HttpFoundation\Response;
+
+$response = new Response();
+$response->setContent(json_encode(array(
+    'data' => 123,
+)));
+$response->headers->set('Content-Type', 'application/json');
+```
+
 ## Search
 
 ### Criterion
@@ -49,3 +70,5 @@ foreach ($result as $record) {
 
 ### Ref
 + [search cheatsheet](http://share.ez.no/blogs/thiago-campos-viana/ez-publish-5-tip-search-cheat-sheet)
++ [eZ| Search](https://doc.ez.no/display/DEVELOPER/Search)
++ [eZ| Content Rendering using QueryTypes from PHP code](https://doc.ez.no/display/DEVELOPER/Content+Rendering#ContentRendering-UsingQueryTypesfromPHPcode)
