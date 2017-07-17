@@ -183,3 +183,52 @@ eureka.client.serviceUrl.defaultZone=http://localhost:8010/eureka/
   </dependencyManagement>
 </project>
 ```
+
+
+# Ribbon LoadBalancerClient
+
++ Controller:
+```java
+@Autowired
+LoadBalancerClient client;
+
+//...
+ServiceInstance instance = client.choose("MY-SERVICE-NAME");
+URI uri = URI.create(String.format("http://%s:%s", instance.getHost(), instance.getPort()));
+if (uri !=null ) {
+    return (new RestTemplate()).getForObject(uri, MY_OBJECT_CLASS.class);
+}
+```
+
++ application
+```properties
+eureka.client.serviceUrl.defaultZone=http://localhost:8010/eureka/
+```
+
++ POM:
+```xml
+<project>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-eureka</artifactId>
+    </dependency>
+    <dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-ribbon</artifactId>
+		</dependency>
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>Dalston.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
+```
