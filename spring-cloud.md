@@ -214,9 +214,9 @@ eureka.client.serviceUrl.defaultZone=http://localhost:8010/eureka/
       <artifactId>spring-cloud-starter-eureka</artifactId>
     </dependency>
     <dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-ribbon</artifactId>
-		</dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-ribbon</artifactId>
+    </dependency>
   </dependencies>
 
   <dependencyManagement>
