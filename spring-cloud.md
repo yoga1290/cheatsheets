@@ -137,7 +137,7 @@ spring.application.name=MY-SERVICE-NAME
 </project>
 ```
 
-### Client
+### Client 
 
 + **`@EnableDiscoveryClient`**
 
@@ -183,6 +183,7 @@ eureka.client.serviceUrl.defaultZone=http://localhost:8010/eureka/
   </dependencyManagement>
 </project>
 ```
++ [Ribbon LoadBalancerClient](#ribbon-loadbalancerclient) can be used instead of **DiscoveryClient**
 
 
 # Ribbon LoadBalancerClient
@@ -216,6 +217,54 @@ eureka.client.serviceUrl.defaultZone=http://localhost:8010/eureka/
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-ribbon</artifactId>
+    </dependency>
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>Dalston.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
+```
+
+# Feign Client
+
++ Interface to the [service](#service) controller:
+```java
+@FeignClient("MY-SERVICE-NAME")
+public interface MyServiceClient {
+    @RequestMapping(method = RequestMethod.GET, value = "/")
+    String abc();
+}
+
+//...
+//@Autowired
+//MyServiceClient myServiceClient;
+// myServiceClient.abc()
+```
+
++ POM:
+```xml
+<project>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-eureka</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-ribbon</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-feign</artifactId>
     </dependency>
   </dependencies>
 
