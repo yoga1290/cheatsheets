@@ -27,3 +27,7 @@
 + [External ENV](https://docs.docker.com/engine/reference/commandline/run/): `docker run --name <container> --env-file <ENV_FILE> <image>`
 + [host network](https://docs.docker.com/engine/reference/run/#network-host): `docker run -it --rm --net="host" --name <container> <image>`
 + [thread run](https://docs.docker.com/engine/reference/commandline/run/): `docker run --name <new container name> -e <ENV Variable> --detach mysql:tag`
+
+### Readings & Issues
+
++ [$USER access](https://docs.docker.com/engine/installation/linux/linux-postinstall/#manage-docker-as-a-non-root-user)
