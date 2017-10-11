@@ -30,4 +30,4 @@
 
 ### Readings & Issues
 
-+ [$USER access](https://docs.docker.com/engine/installation/linux/linux-postinstall/#manage-docker-as-a-non-root-user)
++ [Manage docker as a non-root user](https://docs.docker.com/engine/installation/linux/linux-postinstall/#manage-docker-as-a-non-root-user)
