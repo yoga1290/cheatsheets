@@ -8,6 +8,7 @@ PID=$!
 
 # Process running at certain port
 sudo ss -lptn "sport = :$PORT"
+sudo ss -lptn "sport = :$PORT" | grep -o "pid=[0-9]*" | sed -e "s/pid=//g" | xargs
 ```
 
 # I/O direct:
