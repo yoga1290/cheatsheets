@@ -7,7 +7,7 @@ $CMD &
 PID=$!
 
 # Process running at certain port
-ss -lptn 'sport = :8000'
+sudo ss -lptn "sport = :$PORT"
 ```
 
 # I/O direct:
