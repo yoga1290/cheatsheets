@@ -9,6 +9,9 @@ PID=$!
 # Process running at certain port
 sudo ss -lptn "sport = :$PORT"
 PID=$(sudo ss -lptn "sport = :$PORT" | grep -o "pid=[0-9]*" | sed -e "s/pid=//g" | xargs)
+
+# Free all ports:
+sudo ss -lptn | grep -o "pid=[0-9]*" | sed "s/pid=//g" | xargs sudo kill
 ```
 
 # I/O direct:
