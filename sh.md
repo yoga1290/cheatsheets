@@ -28,8 +28,9 @@ sudo ss -lptn | grep -o "pid=[0-9]*" | sed "s/pid=//g" | xargs sudo kill
 + `watch -n 5 free -h`
 + `df -h`
 
+# Quick fix
 
-# `no tty present and no askpass program specified` fix
+### `no tty present and no askpass program specified` fix
 
 ```bash
 ORIGINAL='%admin ALL=(ALL) ALL'
