@@ -27,3 +27,15 @@ sudo ss -lptn | grep -o "pid=[0-9]*" | sed "s/pid=//g" | xargs sudo kill
 # Memory
 + `watch -n 5 free -h`
 + `df -h`
+
+
+# `no tty present and no askpass program specified` fix
+
+```bash
+ORIGINAL='%admin ALL=(ALL) ALL'
+REP='%admin ALL=(ALL) NOPASSWD: ALL'
+sudo cat /etc/sudoers | sed -e "s/$ORIGINAL/$REP/g" >tmp
+sudo mv tmp /etc/sudoers
+
+# see https://askubuntu.com/a/189542
+```
