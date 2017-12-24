@@ -33,3 +33,14 @@ ffmpeg \
 [in1][keyed]overlay" \
 -y \
 $OUTPUT
+
+# Cropping
+ffmpeg \
+-y \
+-ss $START_TIME \
+-t $DURATION \
+-i $INPUT \
+-filter:v "crop=$WIDTH:$HEIGHT:$STARTX:$STARTY" \
+-c:a copy \
+-t $DURATION \
+$OUTPUT
