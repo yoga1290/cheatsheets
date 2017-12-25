@@ -44,3 +44,8 @@ ffmpeg \
 -c:a copy \
 -t $DURATION \
 $OUTPUT
+
+
+# Rotation
+# https://stackoverflow.com/a/9570992/1683797
+ffmpeg -i $INPUT -vf "transpose=2" $OUTPUT
