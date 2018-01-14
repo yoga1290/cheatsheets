@@ -41,6 +41,21 @@ class MyClass:
     # myClass(*[param1, param2]) ==> myClass(param1, param2)
 ```
 
+```python
+def myDecorator(f):
+    def wrap(*args, **kwargs):
+        # pre-call
+        result = f(*arg, **kwargs)
+        # post-call
+        return result
+        
+    return wrap
+    
+@myDecorator
+def func():
+    #...
+```
+
 
 ## functions
 
