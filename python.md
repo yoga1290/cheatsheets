@@ -40,12 +40,13 @@ class MyClass:
     # myClass = MyClass()
     # myClass(*[param1, param2]) ==> myClass(param1, param2)
   def __repr__(self):
-    # triggered by repr(cls)
+    # triggered by repr(myObject)
+    # reprlib.repr(myObject)
   def __str__(self):
-    # invoked by str(cls)
+    # invoked by str(myObject)
     # fallbacks to __str__()
   def __format__(format_spec):
-    # invoked '{:format_spec_value}'.format(cls)
+    # invoked '{:format_spec_value}'.format(myObject)
     # fallbacks to __str__()
 ```
 ## Decorators
