@@ -40,22 +40,37 @@ class MyClass:
     # myClass = MyClass()
     # myClass(*[param1, param2]) ==> myClass(param1, param2)
 ```
-
+## Decorators
 ```python
+import functools
 def myDecorator(f):
-    def wrap(*args, **kwargs):
-        # pre-call
-        result = f(*arg, **kwargs)
-        # post-call
-        return result
-        
-    return wrap
-    
-@myDecorator
-def func():
-    #...
+        @functools.wraps(f)
+        def wrap():
+            # pre-call
+            result = f()
+            # post-call
+            return result
+        return wrap
+    return myDecorator
 ```
 
+### Passing parameters to decorator
+
+```python
+import functools
+def myDecorator3(param1, param2):
+    def myDecorator(f):
+        def wrap(*args, **kwargs):
+            # pre-call
+            result = f(*arg, **kwargs)
+            # post-call
+            return result
+        # forward the original name/doc
+        wrap.__name__ = f.__name__
+        wrap.__doc__ = f.__doc__
+        return wrap
+    return myDecorator
+```
 
 ## functions
 
