@@ -30,24 +30,30 @@ print('{}'.format(*d.items())) # value list
 ```
 
 ```python
-class MyClass:
-  def __init__(self):
-    self.myVar = {}
-  def __call__(self, *args, **keywordArgs):
-    # MyClass()(param1, param2, key=word)
-    # for arg in args: # may be \__(o_0)__/
-  
-    # myClass = MyClass()
-    # myClass(*[param1, param2]) ==> myClass(param1, param2)
-  def __repr__(self):
-    # triggered by repr(myObject)
-    # reprlib.repr(myObject)
-  def __str__(self):
-    # invoked by str(myObject)
-    # fallbacks to __str__()
-  def __format__(format_spec):
-    # invoked '{:format_spec_value}'.format(myObject)
-    # fallbacks to __str__()
+    class MyClass:
+    def __init__(self):
+        self.myVar = {}
+    def __call__(self, *args, **keywordArgs):
+        # MyClass()(param1, param2, key=word)
+        # for arg in args: # may be \__(o_0)__/
+
+        # myClass = MyClass()
+        # myClass(*[param1, param2]) ==> myClass(param1, param2)
+    def __repr__(self):
+        # triggered by repr(myObject)
+        # reprlib.repr(myObject)
+    def __str__(self):
+        # invoked by str(myObject)
+        # falls back to __str__()
+    def __format__(format_spec):
+        # invoked '{:format_spec_value}'.format(myObject)
+        # falls back to __str__()
+    @staticmethod
+    def mystaticmethod():
+        # no need for `self` parameter
+    @classmethod
+    def myClassMethod(cls, param1):
+        return cls(param1,..) # triggers __init(param1,..)__
 ```
 ## Decorators
 ```python
