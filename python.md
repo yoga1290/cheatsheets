@@ -54,6 +54,16 @@ class MyClass(parentClass1, parentClass2,..):
     @classmethod
     def myClassMethod(cls, param1):
         return cls(param1,..) # triggers __init(param1,..)__
+        
+    @property
+    def toBeValidated(self):
+        return self._v
+    @toBeValidated.setter
+    def toBeValidated(self, value):
+        # validation for `self.toBeValidated`:
+        if validate(value):
+            self._v = value # otherwise, `raise ValueError("..")`?
+
 ```
 ## Decorators
 ```python
