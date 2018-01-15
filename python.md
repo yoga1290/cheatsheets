@@ -105,6 +105,7 @@ def myDecorator3(param1, param2):
 from decimal import Decimal
 
 Decimal('0.8') - Decimal('0.7') # Decimal('0.1')
+Decimal(-7) % Decimal(3) # Decimal(-1) # >-6, instead of 2
 ```
 
 ### 
