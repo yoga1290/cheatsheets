@@ -99,6 +99,14 @@ def myDecorator3(param1, param2):
     return myDecorator
 ```
 
+### Decimal
+
+```python
+from decimal import Decimal
+
+Decimal('0.8') - Decimal('0.7') # Decimal('0.1')
+```
+
 ### 
 
 ## functions
