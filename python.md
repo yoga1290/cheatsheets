@@ -30,7 +30,7 @@ print('{}'.format(*d.items())) # value list
 ```
 
 ```python
-    class MyClass:
+class MyClass:
     def __init__(self):
         self.myVar = {}
     def __call__(self, *args, **keywordArgs):
