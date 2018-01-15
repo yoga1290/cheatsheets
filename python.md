@@ -57,12 +57,14 @@ class MyClass(parentClass1, parentClass2,..):
         
     @property
     def toBeValidated(self):
+        # getter
         return self._v
     @toBeValidated.setter
     def toBeValidated(self, value):
-        # validation for `self.toBeValidated`:
-        if validate(value):
-            self._v = value # otherwise, `raise ValueError("..")`?
+        # setter; validation for `self.toBeValidated`
+        if not (min <= value <= max):
+            raise ValueError("..")
+        self._v = value
 
 ```
 ## Decorators
