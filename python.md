@@ -39,6 +39,14 @@ class MyClass:
   
     # myClass = MyClass()
     # myClass(*[param1, param2]) ==> myClass(param1, param2)
+  def __repr__(self):
+    # triggered by repr(cls)
+  def __str__(self):
+    # invoked by str(cls)
+    # fallbacks to __str__()
+  def __format__(format_spec):
+    # invoked '{:format_spec_value}'.format(cls)
+    # fallbacks to __str__()
 ```
 ## Decorators
 ```python
@@ -71,6 +79,8 @@ def myDecorator3(param1, param2):
         return wrap
     return myDecorator
 ```
+
+### 
 
 ## functions
 
