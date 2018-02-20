@@ -116,3 +116,25 @@ Decimal(-7) % Decimal(3) # Decimal(-1) # >-6, instead of 2
 
 ### string
 + `splitext(del)`
+
+
+## Numpy
+```
+import numpy as np
+
+np.random.randn(N[,D])
+np.array([...]).T 
+np.array([...]).mean()
+np.array([...]).std()
+np.array([...]).dot([])
+np.concatenate()
+```
+
+## Pandas
+```
+import pandas as pd
+
+df = pd.read_csv('file.csv')
+df.head()
+df.as_matrix()
+```
