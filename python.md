@@ -127,6 +127,8 @@ np.array([...]).T
 np.array([...]).mean()
 np.array([...]).std()
 np.array([...]).dot([])
+np.zeros( (N [, D]) )
+N, D = np.array(..).shape
 np.concatenate()
 ```
 
