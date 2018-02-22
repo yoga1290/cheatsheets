@@ -49,3 +49,14 @@ $OUTPUT
 # Rotation
 # https://stackoverflow.com/a/9570992/1683797
 ffmpeg -i $INPUT -vf "transpose=2" $OUTPUT
+
+
+# Side-by-side
+# re: https://stackoverflow.com/a/11553125/1683797
+ffmpeg \
+-i top.mp4 \
+-vf 'pad=iw:ih*2 [top]; \
+movie=right.mp4 [bottom]; \
+[top][bottom] overlay=0:main_w/2' \
+output.mp4
+
