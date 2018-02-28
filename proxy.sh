@@ -5,6 +5,8 @@ export https_proxy='http://DOMAIN:PORT';
 export HTTP_PROXY='http://DOMAIN:PORT';
 export HTTPS_PROXY='http://DOMAIN:PORT';
 
+# Ubuntu/ apt-get
+echo "Acquire::http::Proxy \"$http_proxy\";" > /etc/apt/apt.conf
 
 # see https://docs.docker.com/engine/admin/systemd/#http-proxy
 mkdir -p /etc/systemd/system/docker.service.d;
