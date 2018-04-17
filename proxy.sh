@@ -9,10 +9,14 @@ export HTTPS_PROXY=$https_proxy;
 echo "Acquire::http::Proxy \"$http_proxy\";" > /etc/apt/apt.conf
 
 # see https://docs.docker.com/engine/admin/systemd/#http-proxy
+# see https://docs.docker.com/config/daemon/systemd/#httphttps-proxy
 mkdir -p /etc/systemd/system/docker.service.d;
 CONFIG_FILE='/etc/systemd/system/docker.service.d/http-proxy.conf';
-echo "[Service]\n" >$CONFIG_FILE;
+echo "[Service]" >$CONFIG_FILE;
 echo "Environment=\"HTTP_PROXY=$http_proxy\" \"NO_PROXY=localhost,127.0.0.1,docker-registry.somecorporation.com\"" >>$CONFIG_FILE;
+systemctl daemon-reload;
+systemctl restart docker;
+#TODO: verify: systemctl show --property=Environment docker
 
 echo "HTTP_PROXY=$HTTP_PROXY" >/home/$USER/.docker/proxy.env
 echo "HTTPS_PROXY=$HTTPS_PROXY" >>/home/$USER/.docker/proxy.env
@@ -20,8 +24,6 @@ echo "http_proxy=$http_proxy" >>/home/$USER/.docker/proxy.env
 echo "https_proxy=$https_proxy" >>/home/$USER/.docker/proxy.env
 # to be passed while starting containers:
 # e.g: docker run --env-file ~/.docker/proxy.env -it -p 8000:8000 --net="host" --rm --name container web-portal
-systemctl daemon-reload;
-systemctl restart docker;
 
 
 # GIT
