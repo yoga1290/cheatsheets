@@ -136,7 +136,15 @@ np.concatenate()
 ```
 import pandas as pd
 
-df = pd.read_csv('file.csv')
+df = pd.read_csv('file.csv', [index_col=0, skiprows=1])
+df[df['column1'] > 0 & df['column1'] < 100]].loc[0].name
 df.head()
 df.as_matrix()
 ```
+
+###  Series
+
++ `pd.Series(['a', 'b', 'c'])`
++ `pd.Series({})`
++ `df['columnName'].iloc[i]`
++ `df.iloc[i].name #index`
