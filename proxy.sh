@@ -19,7 +19,7 @@ systemctl restart docker;
 #TODO: verify: systemctl show --property=Environment docker
 
 # see https://docs.docker.com/network/proxy/#configure-the-docker-client#configure-the-docker-client
-echo "{\n "proxies":\n {\n   "default":\n   {\n     \"httpProxy\": \"$http_proxy\",\n     \"noProxy\": \"*.test.example.com,.example2.com\"\n   }\n }\n}" >/home/$USER/.docker/config.json
+echo -e "{\n \"proxies\":\n {\n   \"default\":\n   {\n     \"httpProxy\": \"$http_proxy\",\n     \"noProxy\": \"*.test.example.com,.example2.com\"\n   }\n }\n}" >/home/$USER/.docker/config.json
 
 echo "HTTP_PROXY=$HTTP_PROXY" >/home/$USER/.docker/proxy.env
 echo "HTTPS_PROXY=$HTTPS_PROXY" >>/home/$USER/.docker/proxy.env
