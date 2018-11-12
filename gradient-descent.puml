@@ -4,50 +4,50 @@
 '/
 start
 
+
+repeat
+
+  partition initialize {
+    :b = 0;
+    :W = np.zeros((dim, 1));
+    :Y =  (1, m: examples) # the labels;
+  }
+
+  partition "train: adjust Parameters:W & b" {
+
+      repeat
+
+        partition "FORWARD PROPAGATION" {
+          :<math>sigma(z) = 1/( 1 + exp(-z) )</math>;
+          :<math> model: hat y = sigma(W^T X + b)</math>;
+
+          :<math>P(y|x) = {(hat y, if y = 1), (1 - hat y, if y = 0):}</math>
+          <math>P(y|x) = hat y ^y (1 - hat y)^(1-y)</math>
+          <math>log P(y|x) = y log(hat y) + (1-y) log(1 - hat y)</math>;
+
+          :<math>Criterion = J(w, b) = - ( sum(Y log(hat y) + (1 - y) log(1 - hat y) ) ) / m</math>;
+        }
+
+        partition "BACKWARD PROPAGATION" {
+
+          :<math>dW = (dJ)/(dw) =  (X ** (hat Y - Y)^T) / m</math>;
+          :<math>db = (dJ)/(db) = (sum_(i=0)^m (hat y^i - y^i)) / m</math>;
+
+        }
+
+        partition "Optimize/Update" {
+          :W -= learning_rate * dW;
+          :b -= learning_rate * db;
+        }
+      repeat while (iterate/epoch?)
+  }
 partition "Validation: adjust Hyper-parameters: LearningRate & Epochs" {
 
-  repeat
-
-    partition initialize {
-      :b = 0;
-      :W = np.zeros((dim, 1));
-      :Y =  (1, m: examples) # the labels;
-    }
-
-    partition "train: adjust Parameters:W & b" {
-
-        repeat
-
-          partition "FORWARD PROPAGATION" {
-            :<math>sigma(z) = 1/( 1 + exp(-z) )</math>;
-            :<math> model: hat y = sigma(W^T X + b)</math>;
-
-            :<math>P(y|x) = {(hat y, if y = 1), (1 - hat y, if y = 0):}</math>
-            <math>P(y|x) = hat y ^y (1 - hat y)^(1-y)</math>
-            <math>log P(y|x) = y log(hat y) + (1-y) log(1 - hat y)</math>;
-
-            :<math>Criterion = J(w, b) = - ( sum(Y log(hat y) + (1 - y) log(1 - hat y) ) ) / m</math>;
-          }
-
-          partition "BACKWARD PROPAGATION" {
-
-            :<math>dW = (dJ)/(dw) =  (X ** (hat Y - Y)^T) / m</math>;
-            :<math>db = (dJ)/(db) = (sum_(i=0)^m (hat y^i - y^i)) / m</math>;
-
-          }
-
-          partition "Optimize/Update" {
-            :W -= learning_rate * dW;
-            :b -= learning_rate * db;
-          }
-        repeat while (iterate/epoch?)
-    }
-
-    :<math> model: hat y = sigma(W^T X + b)</math>;
-    : Validation Error = COST(W, b) = <math>criterion( hat y )</math>;
-
-  repeat while (Early Stopping?)
+  :<math> model: hat y = sigma(W^T X + b)</math>;
+  : Validation Error = COST(W, b) = <math>criterion( hat y )</math>;
 }
+repeat while (Early Stopping?)
+
 partition "Prediction" {
   repeat
     :<math>predict(w, b, X) = { (1, if sigma(W^(i) X^(i) + b^(i)) >= 0.5), (0 , otherwise):}</math>;
