@@ -21,3 +21,10 @@
 # Node
 
 + [Promises + Node callback](https://developer.ibm.com/node/2016/08/24/promises-in-node-js-an-alternative-to-callbacks/)
+
+
+# Electron
+
++ [Electron-Builder config sample](https://github.com/yoga1290/Templates/blob/gh-pages/electron-builder.json)
++ [Build under Docker](https://github.com/yoga1290/Templates/blob/gh-pages/electron-builder.sh)
++ [Source protection](https://github.com/electron/electron/issues/2570#issuecomment-134222313)
