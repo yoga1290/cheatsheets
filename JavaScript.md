@@ -28,3 +28,9 @@
 + [Electron-Builder config sample](https://github.com/yoga1290/Templates/blob/gh-pages/electron-builder.json)
 + [Build under Docker](https://github.com/yoga1290/Templates/blob/gh-pages/electron-builder.sh)
 + [Source protection](https://github.com/electron/electron/issues/2570#issuecomment-134222313)
+
+
+# Meteor
+
++ Packages
+  + [template extension](https://atmospherejs.com/aldeed/template-extension)
