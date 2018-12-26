@@ -34,3 +34,7 @@
 
 + Packages
   + [template extension](https://atmospherejs.com/aldeed/template-extension)
+  
+# ES
+
++ [ExploringJS Book](http://exploringjs.com/es6/index.html)
