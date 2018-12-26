@@ -38,3 +38,4 @@
 # ES
 
 + [ExploringJS Book](http://exploringjs.com/es6/index.html)
+  + [Species Pattern](http://exploringjs.com/es6/ch_classes.html#sec_species-pattern)
