@@ -151,4 +151,4 @@ df.as_matrix()
 
 
 # Interactive Python Notebook
-+ (Markdown for IPyNB)[https://www.ibm.com/support/knowledgecenter/SSQNUZ_current/com.ibm.icpdata.doc/dsx/markd-jupyter.html]
++ [Markdown for IPyNB](https://www.ibm.com/support/knowledgecenter/SSQNUZ_current/com.ibm.icpdata.doc/dsx/markd-jupyter.html)
