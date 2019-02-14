@@ -152,3 +152,4 @@ df.as_matrix()
 
 # Interactive Python Notebook
 + [Markdown for IPyNB](https://www.ibm.com/support/knowledgecenter/SSQNUZ_current/com.ibm.icpdata.doc/dsx/markd-jupyter.html)
++ [LaTeX](https://www.math.ubc.ca/~pwalls/math-python/jupyter/latex/)
