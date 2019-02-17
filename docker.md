@@ -9,10 +9,11 @@
 + `docker images`
 + `docker inspect <containerId>`
 + `docker inspect <containerId> | grep -E -o '"Source": "(.)*"' | sed 's/"//g' | sed "s/Source: //g" | xargs nautilus`
++ `docker top <containerId>`
 
 ### Remove
 + `docker kill <containerId>`
-+ `docker rm <containerId>`
++ `docker rm <containerId>` (`docker container rm <containerId>`)
 + `docker rm $(docker ps -a -q)`
 + `docker rmi <image>`
 + `docker rmi $(docker images -q)`
