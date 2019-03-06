@@ -17,13 +17,16 @@
 # TypeScript
 
 + [Typescript for Node](https://blog.risingstack.com/building-a-node-js-app-with-typescript-tutorial/)
-
++ [... and others](https://www.typescriptlang.org/samples/index.html)
 
 # Node
 
 + [npm i git-repository](https://docs.npmjs.com/about-packages-and-modules#npm-package-git-url-formats)
 + [Promises + Node callback](https://developer.ibm.com/node/2016/08/24/promises-in-node-js-an-alternative-to-callbacks/)
 
+## Babel
+
++ [skip strict mode](https://github.com/babel/babel/issues/8585#issuecomment-417378252)
 
 # Electron
 
