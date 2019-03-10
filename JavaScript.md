@@ -35,6 +35,9 @@
 + [Source protection](https://github.com/electron/electron/issues/2570#issuecomment-134222313)
 
 
+# Cordova
++ [CORS](https://stackoverflow.com/a/37398805)
+
 # Meteor
 
 + Packages
