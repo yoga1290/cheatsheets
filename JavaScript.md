@@ -17,6 +17,7 @@
 # TypeScript
 
 + [Typescript for Node](https://blog.risingstack.com/building-a-node-js-app-with-typescript-tutorial/)
++ [TSX for React](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)
 + [... and others](https://www.typescriptlang.org/samples/index.html)
 
 # Node
