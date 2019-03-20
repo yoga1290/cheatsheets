@@ -2,6 +2,7 @@
 
 # Docker
 
++ [Minimal JDK](https://developer.atlassian.com/blog/2015/08/minimal-java-docker-containers/)
 
 ### List
 + `docker ps --filter "status=exited"`
