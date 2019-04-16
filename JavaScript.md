@@ -43,6 +43,7 @@
 
 # Meteor
 
++ [Insert in CollectionFS](https://github.com/CollectionFS/Meteor-CollectionFS#using-insert-properly)
 + Packages
   + [template extension](https://atmospherejs.com/aldeed/template-extension)
 + [server-side computations in template helpers](https://www.ibm.com/developerworks/community/blogs/7cce3ca0-2e7b-4603-90c5-570b646f0dd7/entry/how-to-use-server-side-computation-in-template-helpers?lang=en)
