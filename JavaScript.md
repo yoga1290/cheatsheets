@@ -22,6 +22,7 @@
 
 # Node
 
++ [`request` returns Buffer](https://stackoverflow.com/a/28779556)
 + [Manual Installation](https://github.com/nodesource/distributions/blob/master/README.md#manual-installation)
 + [npm i git-repository](https://docs.npmjs.com/about-packages-and-modules#npm-package-git-url-formats)
 + [Promises + Node callback](https://developer.ibm.com/node/2016/08/24/promises-in-node-js-an-alternative-to-callbacks/)
