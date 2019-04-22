@@ -16,9 +16,10 @@
 
 ## Authorization
 + Node Authorizer
-+ [`--authorization-webhook-config-file=WebhookAuthz.json`](https://kubernetes.io/docs/reference/access-authn-authz/webhook/#configuration-file-format)
++ [Webhook](https://kubernetes.io/docs/reference/access-authn-authz/webhook/#configuration-file-format): `--authorization-webhook-config-file=WebhookAuthz.json`
 + [**Role**-Based Access Control (RBAC) Authorizer](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) (& ClusterRole)
  + `--authorization-mode=RBAC`
+
 ```yaml
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
