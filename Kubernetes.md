@@ -52,4 +52,6 @@ roleRef:
 }
  ```
  
- 
+## Admission Control
++ after API requests are authenticated and authorized.
++  admission-control, which takes a comma-delimited, ordered list of [admission controller names](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#what-does-each-admission-controller-do), e.g: `--admission-control=NamespaceLifecycle,ResourceQuota,PodSecurityPolicy,DefaultStorageClass`
