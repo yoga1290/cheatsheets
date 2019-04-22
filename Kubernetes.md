@@ -17,17 +17,22 @@
 ## Authorization
 + Node Authorizer
 + [`--authorization-webhook-config-file=WebhookAuthz.json`](https://kubernetes.io/docs/reference/access-authn-authz/webhook/#configuration-file-format)
-+ **Role**-Based Access Control (RBAC) Authorizer (& ClusterRole)
++ [**Role**-Based Access Control (RBAC) Authorizer](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) (& ClusterRole)
+ + `--authorization-mode=RBAC`
 ```yaml
-kind: Role
+kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
+  name: pod-read-access
   namespace: lfs158
+subjects:
+- kind: User
+  name: nkhare
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
   name: pod-reader
-rules:
-- apiGroups: [""] # "" indicates the core API group
-  resources: ["pods"]
-  verbs: ["get", "watch", "list"]
+  apiGroup: rbac.authorization.k8s.io
 ```
 + **Attribute**-Based Access Control (ABAC) Authorizer
   + `--authorization-mode=ABAC`
