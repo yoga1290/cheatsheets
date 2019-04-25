@@ -62,6 +62,21 @@ roleRef:
 + load balancing while selecting the Pods
 + By default, each Service also gets an IP address, which is routable only inside the cluster
 + Service can have multipile IP:Port endpoints
++ ServiceType
+ + Decide the access scope
+ + ClusterIP is the default ServiceType w a 0000-32767 NodePort exposed to all worker nodes
++ Service Discovery
+ + Environment Variables for the (previously) created services as:
+  + `<SERVICE_NAME>_SERVICE_HOST`
+  + `<SERVICE_NAME>_SERVICE_PORT`
+  + `<SERVICE_NAME>_PORT`
+  + `<SERVICE_NAME>_PORT_<PORT>_TCP`
+  + `<SERVICE_NAME>_PORT_<PORT>_TCP_PROTO`
+  + `<SERVICE_NAME>_PORT_<PORT>_TCP_PORT`
+  + `<SERVICE_NAME>_PORT_<PORT>_TCP_ADDR`
+ + [DNS add-on](https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/dns)
+  + Services, within the same Namespace, can reach to each other by their name.
+  + 
 
 # kube-proxy
 
