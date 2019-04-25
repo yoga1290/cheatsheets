@@ -55,3 +55,15 @@ roleRef:
 ## Admission Control
 + after API requests are authenticated and authorized.
 +  admission-control, which takes a comma-delimited, ordered list of [admission controller names](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#what-does-each-admission-controller-do), e.g: `--admission-control=NamespaceLifecycle,ResourceQuota,PodSecurityPolicy,DefaultStorageClass`
+
+# Services
+
++ Logically, via Labels & Selectors, groups Pods and a policy to access them
++ load balancing while selecting the Pods
++ By default, each Service also gets an IP address, which is routable only inside the cluster
++ Service can have multipile IP:Port endpoints
+
+# kube-proxy
+
++ Runs in worker nodes
++ Configures the iptable for forwarding to the Service endpoint(s)
