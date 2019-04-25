@@ -65,6 +65,10 @@ roleRef:
 + ServiceType
  + Decide the access scope
  + ClusterIP is the default ServiceType w a 0000-32767 NodePort exposed to all worker nodes
+ + ExternalName
+  + Has no Selectors & endpoints
+  + Accessible within the cluster
+  + Returns a CNAME record of an externally configured Service.
 + Service Discovery
  + Environment Variables for the (previously) created services as:
   + `<SERVICE_NAME>_SERVICE_HOST`
