@@ -1,4 +1,12 @@
- 
+
+# K8S/Kubernetes
+`κυβερνήτης:` means helmsman or ship pilot
+`K8S`, 8 characters between K and S
+
+## MiniKube
++ [install guide](https://kubernetes.io/docs/tasks/tools/install-minikube/)
++ [doc](https://kubernetes.io/docs/setup/minikube)
+
 [![](https://d33wubrfki0l68.cloudfront.net/673dbafd771491a080c02c6de3fdd41b09623c90/50100/images/docs/admin/access-control-overview.svg)](https://kubernetes.io/docs/reference/access-authn-authz/controlling-access/)
 
 **Authentication** -*login*-> **Authorization** -*requests*-> **Admission Control** (other checks)
