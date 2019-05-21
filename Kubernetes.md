@@ -89,6 +89,24 @@ roleRef:
  + [DNS add-on](https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/dns)
   + Services, within the same Namespace, can reach to each other by their name.
   + 
++ example:
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ServiceName
+  labels:
+    app: mysvc
+spec:
+  type: NodePort
+  ports:
+  - port: 80 #
+    targetPort: web-port #forwarded to
+    protocol: TCP
+  selector:
+    app: mysvc
+```
 
 # kube-proxy
 
