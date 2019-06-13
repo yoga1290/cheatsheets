@@ -72,11 +72,11 @@ roleRef:
 
 + Logically, via Labels & Selectors, groups Pods and a policy to access them
 + load balancing while selecting the Pods
-+ By default, each Service also gets an IP address, which is routable only inside the cluster
-+ Service can have multipile IP:Port endpoints
++ By default, each Service also gets an IP address, which is **routable only inside the cluster**
++ Service can have **multipile IP:Port** endpoints
 + ServiceType
  + Decide the access scope
- + ClusterIP is the default ServiceType w a 0000-32767 NodePort exposed to all worker nodes
+ + **ClusterIP** is the default ServiceType w a 0000-32767 NodePort exposed to all worker nodes
  + ExternalName
   + Has no Selectors & endpoints
   + Accessible within the cluster
