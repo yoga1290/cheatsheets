@@ -125,3 +125,7 @@ spec:
  + [Create from file/url](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-configmaps-from-files)
  + [Create from literal values](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-configmaps-from-literal-values)
 + [Environment variables in Pod](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#use-configmap-defined-environment-variables-in-pod-commands)
+
+# Secret
++ Secret data is stored as plain text inside etcd, thus limit access
++ does not appear in `kubectl get secret [secret]` and `kubectl describe secret [secret]`
