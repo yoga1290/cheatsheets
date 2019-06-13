@@ -112,3 +112,11 @@ spec:
 
 + Runs in worker nodes
 + Configures the iptable for forwarding to the Service endpoint(s)
+
+
+# ConfigMap
+
++ [ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-a-configmap)
+ + [Create from directory](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-configmaps-from-directories)
+ + [Create from files](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-configmaps-from-files)
+ + [Create from literal values](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-configmaps-from-literal-values)
