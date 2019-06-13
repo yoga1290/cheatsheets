@@ -130,3 +130,4 @@ spec:
 + Secret data is stored as plain text inside etcd, thus limit access
 + does not appear in `kubectl get secret [secret]` and `kubectl describe secret [secret]`
 + [As Pod Volume](https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-files-from-a-pod)
++ [Environment Variable](https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-environment-variables)
