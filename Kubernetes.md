@@ -3,6 +3,10 @@
 `κυβερνήτης:` means helmsman or ship pilot
 `K8S`, 8 characters between K and S
 
+# [Playground](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#before-you-begin)
+ + [Katacoda](https://www.katacoda.com/courses/kubernetes/playground)
+ + [Play w K8S](http://labs.play-with-k8s.com/)
+
 ## MiniKube
 + [install guide](https://kubernetes.io/docs/tasks/tools/install-minikube/)
 + [doc](https://kubernetes.io/docs/setup/minikube)
@@ -118,5 +122,6 @@ spec:
 
 + [ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-a-configmap)
  + [Create from directory](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-configmaps-from-directories)
- + [Create from files](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-configmaps-from-files)
+ + [Create from file/url](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-configmaps-from-files)
  + [Create from literal values](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-configmaps-from-literal-values)
++ [Environment variables in Pod](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#use-configmap-defined-environment-variables-in-pod-commands)
