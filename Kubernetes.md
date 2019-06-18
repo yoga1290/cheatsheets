@@ -3,6 +3,11 @@
 `κυβερνήτης:` means helmsman or ship pilot
 `K8S`, 8 characters between K and S
 
++ Kubernetes is written in Go
++ Inspired by Google's borg
+
+[![](https://d33wubrfki0l68.cloudfront.net/e298a92e2454520dddefc3b4df28ad68f9b91c6f/70d52/images/docs/pre-ccm-arch.png)](https://kubernetes.io/docs/concepts/architecture/cloud-controller/)
+
 # [Playground](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#before-you-begin)
  + [Katacoda](https://www.katacoda.com/courses/kubernetes/playground)
  + [Play w K8S](http://labs.play-with-k8s.com/)
