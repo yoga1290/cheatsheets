@@ -6,15 +6,20 @@
 + Kubernetes is written in Go
 + Inspired by Google's borg
 
-+ Each **node** in the cluster runs **kubelet** & **kube-proxy**
++ Each **node** in the cluster runs **kubelet**, **kube-proxy** & container engine (Docker/cri-o/rkt)
+ + **kubelet** ensures access or creation of storage, Secrets or ConfigMaps
  + **Master Node** contains **kube-apiserver**, **kube-scheduler**, and **etcd** db
   + **etcd** db is a b+ tree key-value store.
    + There could be **followers** to the **master** db; managed thru **kubeadm**
   + **kube-apiserver** handles both internal and external traffic, connects to the **etcd** db.
   + **kube-scheduler** deploys the **Pod**, quota validation.
-   + **Pod** consists of one or more containers which share an IP address
+   + **Pod** consists of one or more **containers** which share an IP address
+    + **pause container** is used to get an IP address, then all the containers in the pod will use its network namespace
+    + Pods can communicate w each other via loopback interface, IPC or writing files to common filesystem.
 + **Deployment** deploys a **ReplicaSet**, a controller which deploys the **containers**
 + **Annotations** are for meta-data
++ **Supervisord** monitors **kubelet** and docker processes
++ **Fluentd** could be used for cluster-wide logging
 
 [![](https://d33wubrfki0l68.cloudfront.net/e298a92e2454520dddefc3b4df28ad68f9b91c6f/70d52/images/docs/pre-ccm-arch.png)](https://kubernetes.io/docs/concepts/architecture/cloud-controller/)
 
@@ -85,6 +90,7 @@ roleRef:
 
 # Services
 
++ Service is a microservice handling access polices and traffic; NodePort or LoadBalancer
 + Logically, via Labels & Selectors, groups Pods and a policy to access them
 + load balancing while selecting the Pods
 + By default, each Service also gets an IP address, which is **routable only inside the cluster**
