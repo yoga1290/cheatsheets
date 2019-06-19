@@ -6,6 +6,16 @@
 + Kubernetes is written in Go
 + Inspired by Google's borg
 
++ Each **node** in the cluster runs **kubelet** & **kube-proxy**
+ + **Master Node** contains **kube-apiserver**, **kube-scheduler**, and **etcd** db
+  + **etcd** db is a b+ tree key-value store.
+   + There could be **followers** to the **master** db; managed thru **kubeadm**
+  + **kube-apiserver** handles both internal and external traffic, connects to the **etcd** db.
+  + **kube-scheduler** deploys the **Pod**, quota validation.
+   + **Pod** consists of one or more containers which share an IP address
++ **Deployment** deploys a **ReplicaSet**, a controller which deploys the **containers**
++ **Annotations** are for meta-data
+
 [![](https://d33wubrfki0l68.cloudfront.net/e298a92e2454520dddefc3b4df28ad68f9b91c6f/70d52/images/docs/pre-ccm-arch.png)](https://kubernetes.io/docs/concepts/architecture/cloud-controller/)
 
 # [Playground](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#before-you-begin)
