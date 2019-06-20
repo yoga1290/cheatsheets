@@ -13,7 +13,7 @@
    + There could be **followers** to the **master** db; managed thru **kubeadm**
   + **kube-apiserver** handles both internal and external traffic, connects to the **etcd** db.
   + **kube-scheduler** deploys the **Pod**, quota validation.
-   + **Pod** consists of one or more **containers** which share an IP address
+   + **Pod**, a group of co-located **containers** that share the same IP address
     + **pause container** is used to get an IP address, then all the containers in the pod will use its network namespace
     + Pods can communicate w each other via loopback interface, IPC or writing files to common filesystem.
 + **Deployment** deploys a **ReplicaSet**, a controller which deploys the **containers**
@@ -90,6 +90,7 @@ roleRef:
 
 # Services
 
++ External-to-pod communications
 + Service is a microservice handling access polices and traffic; NodePort or LoadBalancer
 + Logically, via Labels & Selectors, groups Pods and a policy to access them
 + load balancing while selecting the Pods
