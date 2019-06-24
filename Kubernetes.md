@@ -16,6 +16,9 @@
    + **Pod**, a group of co-located **containers** that share the same IP address
     + **pause container** is used to get an IP address, then all the containers in the pod will use its network namespace
     + Pods can communicate w each other via loopback interface, IPC or writing files to common filesystem.
+    + Container options: Docker, CRI, Rkt :rocket: , CRI-O
+     + **runC** is part of Kubernetes, unlike Docker, is not bound to higher-level tools and that is more portable across operating systems and environments.
+     + **buildah** & **PodMan** (pod-manager) allow building images with and without Dockerfiles while not requiring any root privileges
 + **Deployment** deploys a **ReplicaSet**, a controller which deploys the **containers**
 + **Annotations** are for meta-data
 + **Supervisord** monitors **kubelet** and docker processes
@@ -153,3 +156,9 @@ spec:
 + does not appear in `kubectl get secret [secret]` and `kubectl describe secret [secret]`
 + [As Pod Volume](https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-files-from-a-pod)
 + [Environment Variable](https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-environment-variables)
+
+# Kubectrl
+
++ `kubectl get pods`
++ `kubectl exec -it <Pod-Name> --/bin/bash`
++ `kubectl run <Deploy-Name> --image=<repo>/<app-name>:<version>`
