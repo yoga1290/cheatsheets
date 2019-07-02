@@ -13,6 +13,13 @@
    + There could be **followers** to the **master** db; managed thru **kubeadm**
   + **kube-apiserver** handles both internal and external traffic, connects to the **etcd** db.
   + **kube-scheduler** deploys the **Pod**, quota validation.
+   + limitations:
+    + `spec.containers[].resources.limits.cpu`
+    + `spec.containers[].resources.requests.cpu`
+    + `spec.containers[].resources.limits.memory`
+    + `spec.containers[].resources.requests.memory`
+    + `spec.containers[].resources.limits.ephemeral-storage`
+    + `spec.containers[].resources.requests.ephemeral-storage`
    + **Pod**, a group of co-located **containers** that share the same IP address (could be for logging and/or different functionality)
     + **State**: "To check state of container, you can use `kubectl describe pod [POD_NAME]`" [docs](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-states) 
     + **Probe**
