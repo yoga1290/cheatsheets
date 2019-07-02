@@ -6,14 +6,14 @@
 + Kubernetes is written in Go
 + Inspired by Google's borg
 
-+ Each **node** in the cluster runs **kubelet**, **kube-proxy** & container engine (Docker/cri-o/rkt)
++ Each **node** in the cluster runs **kubelet** (`/var/lib/kubelet`[docs](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#local-ephemeral-storage)), **kube-proxy** & container engine (Docker/cri-o/rkt)
  + **kubelet** ensures access or creation of storage, Secrets or ConfigMaps
  + **Master Node** contains **kube-apiserver**, **kube-scheduler**, and **etcd** db
   + **etcd** db is a b+ tree key-value store.
    + There could be **followers** to the **master** db; managed thru **kubeadm**
   + **kube-apiserver** handles both internal and external traffic, connects to the **etcd** db.
   + **kube-scheduler** deploys the **Pod**, quota validation.
-   + limitations:
+   + [Resource requests and limits](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#resource-requests-and-limits-of-pod-and-container):
     + `spec.containers[].resources.limits.cpu`
     + `spec.containers[].resources.requests.cpu`
     + `spec.containers[].resources.limits.memory`
