@@ -13,13 +13,16 @@
    + There could be **followers** to the **master** db; managed thru **kubeadm**
   + **kube-apiserver** handles both internal and external traffic, connects to the **etcd** db.
   + **kube-scheduler** deploys the **Pod**, quota validation.
-   + **Pod**, a group of co-located **containers** that share the same IP address
+   + **Pod**, a group of co-located **containers** that share the same IP address (could be for logging and/or different functionality)
+    + **readinessProbe**
+    + **livenessProbe**
     + **pause container** is used to get an IP address, then all the containers in the pod will use its network namespace
     + Pods can communicate w each other via loopback interface, IPC or writing files to common filesystem.
     + Container options: Docker, CRI, Rkt :rocket: , CRI-O
      + **runC** is part of Kubernetes, unlike Docker, is not bound to higher-level tools and that is more portable across operating systems and environments.
      + **buildah** & **PodMan** (pod-manager) allow building images with and without Dockerfiles while not requiring any root privileges
 + **Deployment** deploys a **ReplicaSet**, a controller which deploys the **containers**
+ + [Create](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment), [scale](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#scaling-a-deployment)
 + **Annotations** are for meta-data
 + **Supervisord** monitors **kubelet** and docker processes
 + **Fluentd** could be used for cluster-wide logging
