@@ -14,8 +14,11 @@
   + **kube-apiserver** handles both internal and external traffic, connects to the **etcd** db.
   + **kube-scheduler** deploys the **Pod**, quota validation.
    + **Pod**, a group of co-located **containers** that share the same IP address (could be for logging and/or different functionality)
-    + **readinessProbe**
-    + **livenessProbe**
+    + **State**: "To check state of container, you can use `kubectl describe pod [POD_NAME]`" [docs](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-states) 
+    + **Probe**
+     + "diagnostic performed periodically by the kubelet on a Container. To perform a diagnostic, the **kubelet** calls a **Handler** implemented by the Container" [docs](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes)
+     + **readinessProbe**
+     + **livenessProbe**
     + **pause container** is used to get an IP address, then all the containers in the pod will use its network namespace
     + Pods can communicate w each other via loopback interface, IPC or writing files to common filesystem.
     + Container options: Docker, CRI, Rkt :rocket: , CRI-O
