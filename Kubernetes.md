@@ -24,7 +24,9 @@
     + **State**: "To check state of container, you can use `kubectl describe pod [POD_NAME]`" [docs](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-states) 
     + **Probe**
      + "diagnostic performed periodically by the kubelet on a Container. To perform a diagnostic, the **kubelet** calls a **Handler** implemented by the Container" [docs](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes)
-     + **readinessProbe**
+     + **readinessProbe** :  ready to accept traffic?
+      + `exec` w zero exit
+      + `httpGet` code returns `[  200-399]`
      + **livenessProbe**
     + **pause container** is used to get an IP address, then all the containers in the pod will use its network namespace
     + Pods can communicate w each other via loopback interface, IPC or writing files to common filesystem.
