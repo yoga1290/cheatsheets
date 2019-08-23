@@ -12,6 +12,8 @@
 
 # General
 
++ [DZone](https://dzone.com) [fb](https://www.facebook.com/DZoneInc/)
++ [DEV Community](https://dev.to) [fb](https://www.facebook.com/pg/thepracticaldev/)
 + [Baeldung](https://www.youtube.com/channel/UClz8vOAb28UzP64meEvhg5w)
 + [O'Reilly](https://www.youtube.com/channel/UC3BGlwmI-Vk6PWyMt15dKGw)
 + [Coding Tech](https://www.youtube.com/channel/UCtxCXg-UvSnTKPOzLH4wJaQ)
