@@ -12,8 +12,8 @@
 
 # General
 
-+ [DZone](https://dzone.com) [fb](https://www.facebook.com/DZoneInc/)
-+ [DEV Community](https://dev.to) [fb](https://www.facebook.com/pg/thepracticaldev/)
++ [DZone](https://dzone.com) [[fb]](https://www.facebook.com/DZoneInc/)
++ [DEV Community](https://dev.to) [[fb]](https://www.facebook.com/pg/thepracticaldev/)
 + [Baeldung](https://www.youtube.com/channel/UClz8vOAb28UzP64meEvhg5w)
 + [O'Reilly](https://www.youtube.com/channel/UC3BGlwmI-Vk6PWyMt15dKGw)
 + [Coding Tech](https://www.youtube.com/channel/UCtxCXg-UvSnTKPOzLH4wJaQ)
@@ -58,6 +58,8 @@
 + [VICE LAND](https://www.youtube.com/channel/UCWF0PiUvUi3Jma2oFgaiX2w)
 + [VICE ASIA](https://www.youtube.com/channel/UC8ZyfGD_qP-v75DGCzYQw6g)
 + [VICE ARABIA](https://www.youtube.com/channel/UCIZ3xweMcx1XUlcwRESbmBw)
++ [VOX](https://www.vox.com) [[fb]](https://www.facebook.com/Vox/)
++ VOX BRODERS [[fb]](https://www.facebook.com/VoxBorders) [[yt]](https://www.youtube.com/playlist?list=PLJ8cMiYb3G5dRe4rC7m8jDaqodjZeLzCZ)
 + [Richard Dawkins Foundation for Reason & Science](https://www.youtube.com/channel/UCH_zYYXkJpULueOVZTkY4Bw)
 + [Slate](https://www.youtube.com/channel/UCYC4ijpFZY_CtdElWFyy-Gg)
 + [Jubilee](https://www.youtube.com/channel/UCJjSDX-jUChzOEyok9XYRJQ)
