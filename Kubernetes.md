@@ -185,57 +185,58 @@ spec:
 ## DEPLOYMENT
 -----
 
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: DEPLOYMENT_NAME
-  labels: (*DEPLOYMENT*|*SERVICE*)
-    appdb: rsvpdb
-spec:
-  replicas: 1
-  selector:
-    matchLabels: (*DEPLOYMENT*|*SERVICE*)
-      appdb: rsvpdb
-  template:
-    metadata:
-      labels: (*DEPLOYMENT*)
-        appdb: rsvpdb
-    spec:
-      containers:
-      - name: DEPLOYMENT_CONTAINER_NAME
-        image: DEPLOYMENT_IMAGE:TAG
-        ports:
-        - containerPort: DeploymentPort
+**apiVersion:** apps/v1  
+**kind:** Deployment  
+**metadata:**  
+&nbsp;&nbsp;**name:** DEPLOYMENT_NAME  
+&nbsp;&nbsp;**labels:** (*DEPLOYMENT*|*SERVICE*)  
+&nbsp;&nbsp;**appdb:** rsvpdb  
+**spec:**  
+&nbsp;&nbsp;**replicas:** 1  
+&nbsp;&nbsp;**selector:**  
+&nbsp;&nbsp;**matchLabels:** (*DEPLOYMENT*|*SERVICE*)  
+&nbsp;&nbsp;&nbsp;&nbsp;**appdb:** rsvpdb  
+&nbsp;&nbsp;**template:**  
+&nbsp;&nbsp;&nbsp;&nbsp;**metadata:**  
+&nbsp;&nbsp;&nbsp;&nbsp;**labels:** (*DEPLOYMENT*)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**appdb:** rsvpdb  
+&nbsp;&nbsp;**spec:**  
+&nbsp;&nbsp;&nbsp;&nbsp;**containers:**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- **name:** DEPLOYMENT_CONTAINER_NAME  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**image:** DEPLOYMENT_IMAGE:TAG  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**ports:**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- **containerPort:** DeploymentPort  
 
 ## SERVICE
 -----
-apiVersion: v1
-kind: Service
-metadata:
-  name: mongodb
-  labels: (*DEPLOYMENT*|*SERVICE*)
-    app: rsvpdb
-spec:
-  ports:
-  - port: 27017
-    protocol: TCP
-  selector: (*DEPLOYMENT*|*SERVICE*)
-    appdb: rsvpdb
+**apiVersion:** v1  
+**kind:** Service  
+**metadata:**  
+&nbsp;&nbsp;**name:** mongodb  
+&nbsp;&nbsp;**labels:** (*DEPLOYMENT*|*SERVICE*)  
+&nbsp;&nbsp;**app:** rsvpdb  
+**spec:**  
+&nbsp;&nbsp;**ports:**  
+&nbsp;&nbsp;- **port:** 27017  
+&nbsp;&nbsp;&nbsp;**protocol:** TCP  
+&nbsp;&nbsp;&nbsp;**selector:** (*DEPLOYMENT*|*SERVICE*)  
+&nbsp;&nbsp;&nbsp;**appdb:** rsvpdb  
 
 
 ## RoleBinding
 
 
-kind: RoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
- name: pod-read-access
- namespace: lfs158
-subjects:
- - kind: User
-   name: nkhare
-   apiGroup: rbac.authorization.k8s.io
-roleRef:
-  kind: Role
-  name: pod-reader
-  apiGroup: rbac.authorization.k8s.io
+kind: RoleBinding  
+apiVersion: rbac.authorization.k8s.io/v1  
+metadata:  
+ name: pod-read-access  
+ namespace: lfs158  
+subjects:  
+  - kind: User  
+    name: nkhare  
+    apiGroup: rbac.authorization.k8s.io  
+roleRef:  
+   kind: Role  
+   name: pod-reader  
+   apiGroup: rbac.authorization.k8s.io  
+  
