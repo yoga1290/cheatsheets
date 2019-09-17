@@ -177,3 +177,65 @@ spec:
 + `kubectl get pods`
 + `kubectl exec -it <Pod-Name> --/bin/bash`
 + `kubectl run <Deploy-Name> --image=<repo>/<app-name>:<version>`
+
+
+
+# YAML
+
+## DEPLOYMENT
+-----
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: DEPLOYMENT_NAME
+  labels: (*DEPLOYMENT*|*SERVICE*)
+    appdb: rsvpdb
+spec:
+  replicas: 1
+  selector:
+    matchLabels: (*DEPLOYMENT*|*SERVICE*)
+      appdb: rsvpdb
+  template:
+    metadata:
+      labels: (*DEPLOYMENT*)
+        appdb: rsvpdb
+    spec:
+      containers:
+      - name: DEPLOYMENT_CONTAINER_NAME
+        image: DEPLOYMENT_IMAGE:TAG
+        ports:
+        - containerPort: DeploymentPort
+
+## SERVICE
+-----
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb
+  labels: (*DEPLOYMENT*|*SERVICE*)
+    app: rsvpdb
+spec:
+  ports:
+  - port: 27017
+    protocol: TCP
+  selector: (*DEPLOYMENT*|*SERVICE*)
+    appdb: rsvpdb
+
+
+## RoleBinding
+
+
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+ name: pod-read-access
+ namespace: lfs158
+subjects:
+ - kind: User
+   name: nkhare
+   apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: pod-reader
+  apiGroup: rbac.authorization.k8s.io
