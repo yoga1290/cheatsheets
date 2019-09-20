@@ -58,6 +58,7 @@
 ## [cloud-controller-manager](https://kubernetes.io/docs/reference/command-line-tools-reference/cloud-controller-manager/)
 ## [kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm/)
 
+ + the command to bootstrap the cluster. [[docs](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl)]
  + Starting with v1.15.1, kubeadm allows easy deployment of a multi-master cluster with stacked etcd or an external database cluster.
 
 ## MiniKube
