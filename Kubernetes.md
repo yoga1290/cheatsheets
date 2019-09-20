@@ -14,7 +14,9 @@
      + [**DaemonSet**](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset): Normally, the machine that a Pod runs on is selected by the Kubernetes scheduler. However, Pods created by the DaemonSet controller have the machine already selected
      + [**ReplicaSet**](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/#example)
        + "It is strongly recommended to make sure that the bare Pods do not have labels which match the selector of one of your ReplicaSets… it can acquire other Pods" [[docs](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/#non-template-pod-acquisitions)]
-     + [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/): Manages the deployment and scaling of a set of Pods , and provides guarantees about the ordering and uniqueness
+     + [**StatefulSet**](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/): Manages the deployment and scaling of a set of Pods , and provides guarantees about the ordering and uniqueness.
+     + [Job](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/): creates one or more Pods and ensures that a specified number of them successfully terminate.
+     + [**CronJob**](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/): creates Jobs on a time-based schedule.
    + **etcd** db is a b+ tree key-value store.
      + There could be **followers** to the **master** db; managed thru **kubeadm**
    + **kube-apiserver** handles both internal and external traffic, connects to the **etcd** db.
