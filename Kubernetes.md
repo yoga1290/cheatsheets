@@ -11,7 +11,7 @@
  + **Master Node** contains **kube-apiserver**, **kube-scheduler**, **Controllers** and **etcd** db
    + **Controllers**
      + **Deployment** deploys a **ReplicaSet**, a controller which deploys the **containers** [[Create](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment), [scale](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#scaling-a-deployment)]
-     + **DaemonSet** (Controller): Normally, the machine that a Pod runs on is selected by the Kubernetes scheduler. However, Pods created by the DaemonSet controller have the machine already selected [[docs](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/#how-daemon-pods-are-scheduled)]
+     + [**DaemonSet**](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset) (Controller): Normally, the machine that a Pod runs on is selected by the Kubernetes scheduler. However, Pods created by the DaemonSet controller have the machine already selected
    + **etcd** db is a b+ tree key-value store.
      + There could be **followers** to the **master** db; managed thru **kubeadm**
    + **kube-apiserver** handles both internal and external traffic, connects to the **etcd** db.
@@ -111,7 +111,8 @@ roleRef:
 # Services
 
 + External-to-pod communications
-+ Service is a microservice handling access polices and traffic; NodePort or LoadBalancer
++ "defines a logical set of Pods and a policy by which to access them" [[docs](https://kubernetes.io/docs/concepts/services-networking/service/#service-resource)]
++ Service is a microservice handling access polices and traffic; NodePort or **LoadBalancer**
 + Logically, via Labels & Selectors, groups Pods and a policy to access them
 + load balancing while selecting the Pods
 + By default, each Service also gets an IP address, which is **routable only inside the cluster**
