@@ -9,7 +9,7 @@
 + Each **node** in the cluster runs **kubelet** (`/var/lib/kubelet`[docs](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#local-ephemeral-storage)), **kube-proxy** & container engine (Docker/cri-o/rkt)
  + **kubelet** ensures access or creation of storage, Secrets or ConfigMaps
  + **Master Node** contains **kube-apiserver**, **kube-scheduler**, **Controllers** and **etcd** db
-   + **Controllers**
+   + **Controllers**: "A control loop that watches the shared state of the cluster through the apiserver and makes changes attempting to move the current state towards the desired state." [[docs](https://kubernetes.io/docs/concepts/overview/components/#kube-controller-manager)]
      + **Deployment** deploys a **ReplicaSet**, a controller which deploys the **containers** [[Create](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment), [scale](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#scaling-a-deployment)]
      + [**DaemonSet**](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset): Normally, the machine that a Pod runs on is selected by the Kubernetes scheduler. However, Pods created by the DaemonSet controller have the machine already selected
      + [**ReplicaSet**](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/#example)
