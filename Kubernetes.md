@@ -8,7 +8,10 @@
 
 + Each **node** in the cluster runs **kubelet** (`/var/lib/kubelet`[docs](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#local-ephemeral-storage)), **kube-proxy** & container engine (Docker/cri-o/rkt)
  + **kubelet** ensures access or creation of storage, Secrets or ConfigMaps
- + **Master Node** contains **kube-apiserver**, **kube-scheduler**, and **etcd** db
+ + **Master Node** contains **kube-apiserver**, **kube-scheduler**, **Controllers** and **etcd** db
+   + **Controllers**
+     + **Deployment** deploys a **ReplicaSet**, a controller which deploys the **containers** [[Create](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment), [scale](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#scaling-a-deployment)]
+     + **DaemonSet** (Controller): Normally, the machine that a Pod runs on is selected by the Kubernetes scheduler. However, Pods created by the DaemonSet controller have the machine already selected [[docs](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/#how-daemon-pods-are-scheduled)]
   + **etcd** db is a b+ tree key-value store.
    + There could be **followers** to the **master** db; managed thru **kubeadm**
   + **kube-apiserver** handles both internal and external traffic, connects to the **etcd** db.
@@ -33,8 +36,7 @@
     + Container options: Docker, CRI, Rkt :rocket: , CRI-O
      + **runC** is part of Kubernetes, unlike Docker, is not bound to higher-level tools and that is more portable across operating systems and environments.
      + **buildah** & **PodMan** (pod-manager) allow building images with and without Dockerfiles while not requiring any root privileges
-+ **Deployment** deploys a **ReplicaSet**, a controller which deploys the **containers**
- + [Create](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment), [scale](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#scaling-a-deployment)
+
 + **Annotations** are for meta-data
 + **Supervisord** monitors **kubelet** and docker processes
 + **Fluentd** could be used for cluster-wide logging
@@ -240,3 +242,5 @@ roleRef:
    name: pod-reader  
    apiGroup: rbac.authorization.k8s.io  
   
+
+## [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/#create-a-daemonset)
