@@ -6,6 +6,8 @@
 + Kubernetes is written in Go
 + Inspired by Google's borg
 
++ [CKA & CKAD FAQ](https://www.cncf.io/certification/cka/faq/)
+
 + Each **node** in the cluster runs **kubelet** (`/var/lib/kubelet`[docs](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#local-ephemeral-storage)), **kube-proxy** & container engine (Docker/cri-o/rkt)
  + **kubelet** ensures access or creation of storage, Secrets or ConfigMaps
  + **Master Node** contains **kube-apiserver**, **kube-scheduler**, **Controllers** and **etcd** db
