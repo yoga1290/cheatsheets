@@ -52,6 +52,11 @@
  + [Katacoda](https://www.katacoda.com/courses/kubernetes/playground)
  + [Play w K8S](http://labs.play-with-k8s.com/)
 
+# CLI tools
+
+## [kube-controller-manager](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/)
+## [cloud-controller-manager](https://kubernetes.io/docs/reference/command-line-tools-reference/cloud-controller-manager/)
+
 ## MiniKube
 + [install guide](https://kubernetes.io/docs/tasks/tools/install-minikube/)
 + [doc](https://kubernetes.io/docs/setup/minikube)
