@@ -187,6 +187,8 @@ spec:
 
 # YAML
 
+**TODO**, trying to summirize the official examples. [docs](https://github.com/kubernetes/website/tree/master/content/en/examples)
+
 ## DEPLOYMENT
 -----
 
