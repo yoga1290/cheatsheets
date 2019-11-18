@@ -1,3 +1,7 @@
+# ssh issues
+
++ [permissions](https://gist.github.com/grenade/6318301)
+
 # process
 
 ```bash
