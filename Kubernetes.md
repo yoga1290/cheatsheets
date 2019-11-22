@@ -28,6 +28,7 @@
      + There could be **followers** to the **master** db; managed thru **kubeadm**
    + **kube-apiserver** handles both internal and external traffic, the only agent that connects to the **etcd** db.
    + **kube-scheduler** deploys the **Pod**, quota validation.
+     + uses the **PodSpec** to determine the best node for deployment.
      + [Resource requests and limits](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#resource-requests-and-limits-of-pod-and-container):
      + `spec.containers[].resources.limits.cpu`
      + `spec.containers[].resources.requests.cpu`
@@ -204,6 +205,9 @@ spec:
 + `kubectl run <Deploy-Name> --image=<repo>/<app-name>:<version>`
 
 
+
+# Prometheus
++ Monitoring the resource usage cluster-wide
 
 # YAML
 
