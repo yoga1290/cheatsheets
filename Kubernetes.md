@@ -40,8 +40,8 @@
   + **Probe**
     + "diagnostic performed periodically by the kubelet on a Container. To perform a diagnostic, the **kubelet** calls a **Handler** implemented by the Container" [docs](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes)
    + **readinessProbe** :  ready to accept traffic?
-    + `exec` w zero exit
-    + `httpGet` code returns `[  200-399]`
+     + `exec` w zero exit
+     + `httpGet` code returns `[  200-399]`
    + **livenessProbe**
   + **sidecar**: a container dedicated to performing a helper task, like handling logs and responding to requests. [2.17 LFD259]
   + **pause container** is used to get an IP address, then all the containers in the pod will use its network namespace
