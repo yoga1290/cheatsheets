@@ -39,6 +39,7 @@
     + `exec` w zero exit
     + `httpGet` code returns `[  200-399]`
    + **livenessProbe**
+  + **sidecar**: a container dedicated to performing a helper task, like handling logs and responding to requests. [2.17 LFD259]
   + **pause container** is used to get an IP address, then all the containers in the pod will use its network namespace
   + Pods can communicate w each other via loopback interface, IPC or writing files to common filesystem.
  + Container options: Docker, CRI, Rkt :rocket: , CRI-O
