@@ -208,6 +208,8 @@ spec:
 
 # Prometheus
 + Monitoring the resource usage cluster-wide
+# Fluentd
++ data collector for unified logging layer
 
 # YAML
 
