@@ -22,7 +22,7 @@
      + [**CronJob**](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/): creates Jobs on a time-based schedule.
    + **etcd** db is a b+ tree key-value store.
      + There could be **followers** to the **master** db; managed thru **kubeadm**
-   + **kube-apiserver** handles both internal and external traffic, connects to the **etcd** db.
+   + **kube-apiserver** handles both internal and external traffic, the only agent that connects to the **etcd** db.
    + **kube-scheduler** deploys the **Pod**, quota validation.
      + [Resource requests and limits](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#resource-requests-and-limits-of-pod-and-container):
      + `spec.containers[].resources.limits.cpu`
