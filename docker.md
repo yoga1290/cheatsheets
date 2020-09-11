@@ -4,6 +4,7 @@
 + [Docker-Compose](#docker)
     + [Mongo](#mongo)
     + [MySQL](#mysql)
+    + [NGINX](#nginx)
 
 --------
 
@@ -136,3 +137,55 @@ services:
         - database
 ```
 
+## nginx
+
++ **docker-compose.yml**:
+```yaml
+version: '3.7'
+services:
+
+  # a side-car for initalizing certificates
+  frontend-init:
+    image: tomcat:9.0.10-jre8
+    volumes:
+      - ./certificates:/usr/app
+    command: |
+      bash -c 'bash -s <<EOF
+          echo -e "EG\nSTATE\nCITY\nCOMPANY\nSECTION\nNAME\nEMAIL\n" | \
+            openssl \
+            req -x509 \
+            -nodes -days 365 \
+            -newkey rsa:2048 \
+            -keyout /usr/app/selfsigned.key \
+            -out /usr/app/selfsigned.crt
+      EOF'
+
+  frontend:
+    image: nginx:alpine
+    volumes:
+      - ./certificates/:/usr/app/certificates/
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./:/usr/share/nginx/html/
+    ports:
+      - 3000:80
+      - 443:443
+```
++ **nginx.conf:**
+```
+events{}
+http {
+    server {
+        listen               443;
+        ssl                  on;
+        ssl_certificate      /usr/app/certificates/selfsigned.crt;
+        ssl_certificate_key  /usr/app/certificates/selfsigned.key;
+        ssl_ciphers          HIGH:!aNULL:!MD5;
+        # server_name          local.website.dev;
+        # serves static files; https://www.nginx.com/resources/wiki/start/topics/examples/full/
+        location /  {
+            root    /usr/share/nginx/html;
+            expires 1m;
+        }
+    }
+}
+```
